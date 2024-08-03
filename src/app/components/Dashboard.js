@@ -59,7 +59,7 @@ export default function Dashboard(){
                     </div>
                 </div>
             </div>
-            <div className='flex flex-col sm:flex-row sm:justify-around sm:gap-8'>
+            <div className='flex flex-col md:flex-row md:justify-around md:gap-8'>
                 <CardLineChart/>
                 <CardBarChart/>
             </div>

@@ -13,10 +13,10 @@ const Sidebar = () => {
 
   return (
     <>
-      <div className={`fixed top-0 left-0 z-20 flex items-center p-3 md:hidden`} onClick={toggleSidebar}>
+      <div className={`fixed top-0 left-0 flex items-center p-3 md:hidden z-20`} onClick={toggleSidebar}>
         <FontAwesomeIcon icon={faBars} className="w-6 h-6 text-black" />
       </div>
-      <div className={`fixed top-0 left-0 z-10 bg-white transition-transform transform ${isOpen ? 'translate-x-0' : '-translate-x-full'} md:translate-x-0 md:relative md:w-80 md:flex`}>
+      <div className={`fixed top-0 left-0 z-10 bg-white transition-transform transform ${isOpen ? 'translate-x-0' : '-translate-x-full'} md:translate-x-0 md:relative md:w-80 md:flex ${isOpen? 'top-24': 'top-0'}`}>
         <nav className="flex flex-col p-4 space-y-4 text-black w-80">
           <Link href="/" legacyBehavior>
             <a className="flex items-center p-3 gap-3 text-black text-xl rounded-md bg-slate-100">

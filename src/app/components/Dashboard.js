@@ -9,8 +9,8 @@ export default function Dashboard(){
                 <span className="text-xl text-blue-500">Dashboard</span>
                 <button className="w-fit border-2 bg-teal-300 p-3 rounded-xl">Dashboard</button>
             </div>
-            <div className="items flex flex-row justify-around gap-8 mt-10">
-                <div className='single-item bg-white p-3 w-fit grow rounded-2xl mb-0'>
+            <div className="flex flex-col gap-5 sm:flex-row sm:justify-around sm:gap-8 mt-10">
+                <div className='single-item bg-white p-3 md:w-fit grow rounded-2xl mb-0'>
                     <div className="flex flex-row">
                         <span className='text-xl font-bold text-blue-500'>Order | </span>
                         <span className='text-xl text-gray-500'>This Month</span>
@@ -26,7 +26,7 @@ export default function Dashboard(){
                         </div>
                     </div>
                 </div>
-                <div className='single-item bg-white p-3 w-fit grow rounded-2xl mb-0'>
+                <div className='single-item bg-white p-3 md:w-fit grow rounded-2xl mb-0'>
                     <div className="flex flex-row">
                         <span className='text-xl font-bold text-blue-500'>Revenue | </span>
                         <span className='text-xl text-gray-500'>This Month</span>
@@ -42,7 +42,7 @@ export default function Dashboard(){
                         </div>
                     </div>
                 </div>
-                <div className='single-item bg-white p-3 w-fit grow rounded-2xl mb-0'>
+                <div className='single-item bg-white p-3 md:w-fit grow rounded-2xl mb-0'>
                     <div className="flex flex-row">
                         <span className='text-xl font-bold text-blue-500'>Customers | </span>
                         <span className='text-xl text-gray-500'>This Month</span>
@@ -59,7 +59,7 @@ export default function Dashboard(){
                     </div>
                 </div>
             </div>
-            <div className='flex flex-row gap-6'>
+            <div className='flex flex-col sm:flex-row sm:justify-around sm:gap-8'>
                 <CardLineChart/>
                 <CardBarChart/>
             </div>

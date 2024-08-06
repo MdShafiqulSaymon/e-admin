@@ -32,7 +32,7 @@ export default function Dashboard(){
                         <span className='text-xl text-gray-500'>This Month</span>
                     </div>
                     <div className='flex flex-row gap-4 mt-4 items-center'>
-                        <div className="colour-box w-10 h-16 bg-blue-300 rounded-3xl"></div>
+                        <div className="colour-box w-10 h-16 bg-green-300 rounded-3xl"></div>
                         <div className='flex flex-col gap-1'>
                             <span className='text-5xl font-bold'>$ 17,100</span>
                             <div className='flex gap-4'>
@@ -48,7 +48,7 @@ export default function Dashboard(){
                         <span className='text-xl text-gray-500'>This Month</span>
                     </div>
                     <div className='flex flex-row gap-4 mt-4 items-center'>
-                        <div className="colour-box w-10 h-16 bg-blue-300 rounded-3xl"></div>
+                        <div className="colour-box w-10 h-16 bg-yellow-300 rounded-3xl"></div>
                         <div className='flex flex-col gap-1'>
                             <span className='text-5xl font-bold'>35</span>
                             <div className='flex gap-4'>

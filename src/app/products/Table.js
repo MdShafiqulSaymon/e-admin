@@ -11,9 +11,9 @@ const Table = ({ header, data }) => {
   };
 
   return (
-    <div className="relative overflow-auto">
-      <table className="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
-        <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+    <div className="relative overflow-auto rounded-md shadow-lg">
+      <table className="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400 rounded-md">
+        <thead className="text-xs text-gray-700 uppercase bg-white dark:bg-gray-700 dark:text-gray-400">
           <tr>
             {header.map((col, index) => (
               <th key={index} scope="col" className="px-6 py-3">
@@ -25,7 +25,7 @@ const Table = ({ header, data }) => {
         </thead>
         <tbody>
           {data.map((row, rowIndex) => (
-            <tr key={rowIndex} className="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+            <tr key={rowIndex} className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 text-black">
               {header.map((col, colIndex) => (
                 <td key={colIndex} className="px-6 py-4">
                   {row[col.toLowerCase().replace(/ /g, "_").replace(/&/g, "and")]}

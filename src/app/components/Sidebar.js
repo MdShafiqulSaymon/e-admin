@@ -36,7 +36,7 @@ const Sidebar = () => {
               <span className=" md:block">Categories</span>
             </a>
           </Link>
-          <Link href="/" legacyBehavior>
+          <Link href="/admins" legacyBehavior>
             <a className="flex items-center p-3 gap-3 text-xl rounded-md">
               <FontAwesomeIcon icon={faPerson} className="w-5 h-5 mr-2 text-red-600" />
               <span className=" md:block">Admin</span>
@@ -54,7 +54,7 @@ const Sidebar = () => {
               <span className=" md:block">Shipping</span>
             </a>
           </Link>
-          <Link href="/" legacyBehavior>
+          <Link href="/settings" legacyBehavior>
             <a className="flex items-center p-3 gap-3 text-xl rounded-md">
               <FontAwesomeIcon icon={faCog} className="w-5 h-5 mr-2 text-green-600" />
               <span className=" md:block">Settings</span>

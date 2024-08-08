@@ -9,7 +9,6 @@ const Sidebar = () => {
   const [lastScrollY, setLastScrollY] = useState(0);
   const routers=useRouter()
   const pathname=usePathname();
-  console.log(pathname)
   const activeBar="sm:rounded-l-lg bg-slate-100 shadow-lg";
   const toggleSidebar = () => {
     setIsOpen(!isOpen);

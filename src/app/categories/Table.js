@@ -1,7 +1,8 @@
 "use-client"
 import React from 'react';
 
-export default function Table({ header, data }) {
+export default function Table({data }) {
+  const header = ["ID", "Category Name", "Products", "Edit"];
   return (
     <div className="relative overflow-x-auto rounded-md shadow-lg">
       <table className="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
@@ -17,11 +18,10 @@ export default function Table({ header, data }) {
         <tbody>
           {data.map((row, rowIndex) => (
             <tr key={rowIndex} className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 text-black">
-              {header.map((head, colIndex) => (
-                <td key={colIndex} className="px-6 py-4">
-                  {row[head]}
-                </td>
-              ))}
+               <td className="px-6 py-4">{row.id}</td>
+               <td className="px-6 py-4">{row.name}</td>
+               <td className="px-6 py-4">{row.totalProducts}</td>
+               <td className="px-6 py-4">{"edit"}</td>
             </tr>
           ))}
         </tbody>

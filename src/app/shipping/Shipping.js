@@ -1,7 +1,7 @@
 "use client"
 import Breadcrumbs from "../components/Breadcrumbs";
 import LightBtn from "../components/light-btn";
-import AddressDropDown from "./AddressDropDown";
+import SelectDropDown from "../components/SelectDropDown";
 import Input from "../components/Input";
 import { useState } from "react";
 export default function Shipping() {
@@ -27,7 +27,7 @@ export default function Shipping() {
         <Breadcrumbs breadcrumbs={breadcrumbData} />
         <LightBtn colour={"bg-teal-300"} title={"Shipping"} />
         <div><span className="pl-2 text-gray-600">Select the Disrtict (BD)</span></div>
-        <AddressDropDown addresses={addresses} selectedAddress={selectedAddress} setSelectedAddress={setSelectedAddress}/>
+        <SelectDropDown options={addresses} selectedOption={selectedAddress} setSelectedOption={setSelectedAddress} placeHolder={"Select Address"}/>
         <div><span className="pl-2 text-gray-600">Inside {selectedAddress} (BDT)</span></div>
         <Input value={insideCharge} setValue={setInsideCharge}/>
         <div><span className="pl-2 text-gray-600">Outside {selectedAddress} (BDT)</span></div>

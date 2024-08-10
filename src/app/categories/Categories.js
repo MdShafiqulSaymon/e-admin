@@ -14,6 +14,7 @@ const Categories = () => {
     title: '',
     subtitle: '',
   });
+  const [loading, setLoading] = useState(false); // New loading state
 
   const breadcrumbData = [
     { label: "Dashboard", href: "/" },
@@ -21,17 +22,16 @@ const Categories = () => {
   ];
   const header = ["ID", "Category Name", "Products", "Edit"];
 
-  useEffect(() => {
-    const fetchCategories = async () => {
-      try {
-        const response = await axios.get('/api/categories');
-        setCategories(response.data)
-        console.log(response.data)
-      } catch (error) {
-        console.error('Error fetching categories:', error);
-      }
-    };
+  const fetchCategories = async () => {
+    try {
+      const response = await axios.get('/api/categories');
+      setCategories(response.data);
+    } catch (error) {
+      console.error('Error fetching categories:', error);
+    }
+  };
 
+  useEffect(() => {
     fetchCategories();
   }, []);
 
@@ -42,16 +42,24 @@ const Categories = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setLoading(true); // Set loading to true when submitting
     try {
       const response = await fetch('/api/categories', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData),
       });
-      console.log(formData)
+
+      // After successful submission, fetch updated categories
+      await fetchCategories();
+
+      setFormData({ name: '', title: '', subtitle: '' }); // Clear the form
+      console.log(formData);
       console.log(response);
     } catch (error) {
       console.error('Error creating category:', error);
+    } finally {
+      setLoading(false); // Set loading to false after submission
     }
   };
 
@@ -93,7 +101,14 @@ const Categories = () => {
         </div>
         <LightBtn colour={"bg-sky-600"} title={"Save"} type="submit" />
       </form>
-      <Table data={categories} />
+
+      {loading ? (
+        <div className="flex justify-center items-center">
+          <div className="spinner-border animate-spin inline-block w-8 h-8 border-4 rounded-full"></div>
+        </div>
+      ) : (
+        <Table data={categories} />
+      )}
     </div>
   );
 };

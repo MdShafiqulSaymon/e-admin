@@ -74,7 +74,7 @@ export default function Products() {
         <Breadcrumbs breadcrumbs={breadcrumbData} />
         <div className="flex w-full justify-between">
             <LightBtn colour={"bg-teal-300"} title={"Products"} />
-            <LightBtn colour={"bg-blue-700"} title={"+ Add Product"} extCss="text-white"/>
+            <LightBtn colour={"bg-blue-700"} title={"+ Add Product"} extCss="text-white" link="/products/new" />
         </div>
       </div>
       <Table header={header} data={data} />

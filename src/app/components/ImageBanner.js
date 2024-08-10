@@ -2,8 +2,7 @@
 
 import React, { useState } from 'react';
 
-const MultiSelectImage = () => {
-  const [selectedImages, setSelectedImages] = useState([]);
+const MultiSelectImage = ({selectedImages,setSelectedImages}) => {
 
   const handleImageUpload = (event) => {
     const files = Array.from(event.target.files);

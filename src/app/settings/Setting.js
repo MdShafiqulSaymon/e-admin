@@ -2,11 +2,12 @@
 import { useState } from "react";
 import Breadcrumbs from "../components/Breadcrumbs";
 import LightBtn from "../components/light-btn";
-import MultiSelect from "./MultiInput";
+import MultiSelect from "../components/MultiInput";
 import Input from "../components/Input";
-import MultiSelectImage from "./ImageBanner";
+import MultiSelectImage from "../components/ImageBanner";
 
 export default function Setting() {
+  const [selectedImages, setSelectedImages] = useState([]);
   const [selectedProdects, setSelectedProdects] = useState([]);
   const [selectedCategories, setSelectedCategories] = useState([]);
   const [headerTitle, setHeaderTitle] = useState("");
@@ -73,7 +74,7 @@ export default function Setting() {
       </div>
       <div>
         <span className="pl-2 text-gray-600">Banner Images</span>
-        <MultiSelectImage />
+        <MultiSelectImage selectedImages={selectedImages} setSelectedImages={setSelectedImages}/>
       </div>
     </div>
   );

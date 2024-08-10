@@ -42,7 +42,7 @@ const Sidebar = () => {
             </a>
           </Link>
           <Link href="/products" legacyBehavior>
-          <a className={`flex items-center p-3 gap-3 text-black text-xl ${pathname === '/products' || '/products/new' ? 'sm:rounded-l-lg bg-sky-200 shadow-lg' : ''}`}>
+          <a className={`flex items-center p-3 gap-3 text-black text-xl ${pathname === '/products' ? 'sm:rounded-l-lg bg-sky-200 shadow-lg' : ''}`}>
               <FontAwesomeIcon icon={faBox} className="w-5 h-5 mr-2 text-blue-600" />
               <span className="md:block">Products</span>
             </a>

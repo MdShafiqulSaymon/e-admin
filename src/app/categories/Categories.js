@@ -21,46 +21,31 @@ const Categories = () => {
     { label: "Categories", href: "/categories" },
   ];
   const header = ["ID", "Category Name", "Products", "Edit"];
-
-  const fetchCategories = async () => {
-    try {
-      const response = await axios.get('/api/categories');
-      setCategories(response.data);
-    } catch (error) {
-      console.error('Error fetching categories:', error);
-    }
-  };
-
-  useEffect(() => {
-    fetchCategories();
-  }, []);
+  const data = [
+    {
+      ID: 1,
+      CategoryName: "Laptop",
+      Products: '20"',
+      Edit: "...",
+    },
+    {
+      ID: 2,
+      CategoryName: "Laptop PC",
+      Products: "30",
+      Edit: "...",
+    },
+    {
+      ID: 3,
+      CategoryName: "Accessories",
+      Products: "15",
+      Edit: "...",
+    },
+  ];
+  
 
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
-  };
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setLoading(true); // Set loading to true when submitting
-    try {
-      const response = await fetch('/api/categories', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData),
-      });
-
-      // After successful submission, fetch updated categories
-      await fetchCategories();
-
-      setFormData({ name: '', title: '', subtitle: '' }); // Clear the form
-      console.log(formData);
-      console.log(response);
-    } catch (error) {
-      console.error('Error creating category:', error);
-    } finally {
-      setLoading(false); // Set loading to false after submission
-    }
   };
 
   return (
@@ -69,7 +54,7 @@ const Categories = () => {
         <Breadcrumbs breadcrumbs={breadcrumbData} />
         <LightBtn colour={"bg-teal-300"} title={"Category"} />
       </div>
-      <form onSubmit={handleSubmit} className="input-box flex flex-col gap-3">
+      <form className="input-box flex flex-col gap-3">
         <label className="text-gray-700">Create New Category</label>
         <input
           type="text"
@@ -107,7 +92,7 @@ const Categories = () => {
           <div className="spinner-border animate-spin inline-block w-8 h-8 border-4 rounded-full"></div>
         </div>
       ) : (
-        <Table data={categories} />
+        <Table data={data} />
       )}
     </div>
   );

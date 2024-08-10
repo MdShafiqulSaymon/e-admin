@@ -18,10 +18,10 @@ export default function Table({data }) {
         <tbody>
           {data.map((row, rowIndex) => (
             <tr key={rowIndex} className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 text-black hover:bg-gray-200">
-               <td className="px-6 py-4">{row.id}</td>
-               <td className="px-6 py-4">{row.name}</td>
-               <td className="px-6 py-4">{row.totalProducts}</td>
-               <td className="px-6 py-4">{"edit"}</td>
+               <td className="px-6 py-4">{row.ID}</td>
+               <td className="px-6 py-4">{row.CategoryName}</td>
+               <td className="px-6 py-4">{row.Products}</td>
+               <td className="px-6 py-4">{row.Edit}</td>
             </tr>
           ))}
         </tbody>

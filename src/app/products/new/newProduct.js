@@ -120,7 +120,7 @@ export default function NewProduct() {
     );
     setCombinationStates(updatedCombinationStates);
   };
-
+  console.log(combinationStates)
   return (
     <div className="main flex flex-col w-full p-6 gap-5">
       <div className="title-part flex flex-col gap-3">

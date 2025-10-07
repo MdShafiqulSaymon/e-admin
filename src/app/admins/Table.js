@@ -16,7 +16,7 @@ export default function Table({ data }) {
             {data.map((row, index) => (
               <tr
                 key={index}
-                className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-200 text-black"
+                className="bg-white border-b hover:bg-gray-200 text-black"
               >
                 <td className="px-6 py-4">{row.email}</td>
                 <td className="px-6 py-4">{row.createdAt}</td>

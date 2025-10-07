@@ -25,7 +25,7 @@ const Table = ({ header, data }) => {
         </thead>
         <tbody>
           {data.map((row, rowIndex) => (
-            <tr key={rowIndex} className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 text-black">
+            <tr key={rowIndex} className="bg-white border-b hover:bg-gray-200 text-black text-black">
               {header.map((col, colIndex) => (
                 <td key={colIndex} className="px-6 py-4">
                   {row[col.toLowerCase().replace(/ /g, "_").replace(/&/g, "and")]}
